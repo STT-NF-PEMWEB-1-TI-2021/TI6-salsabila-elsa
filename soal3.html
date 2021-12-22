@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function hitungParkir(){
+                let jam_masuk = document.getElementById("masuk").value;
+                let jam_keluar = document.getElementById("keluar").value;
+                let selisih = jam_keluar - jam_masuk;
+                let biaya =0;
+                const Tarif_awal = 3000;
+                const Tarif_perjam = 1000;// perjam berikutnya
+                if(selisih <= 2){ // yg kurang dr atau sama dgn 2
+                    biaya = Tarif_awal;
+                }else{
+                    let tambahan_jam = selisih - 2;
+                    biaya = Tarif_awal = (Tarif_perjam * tambahan_jam);
+                }
+                let area_biaya = document.getElementById("biaya")
+                area_biaya.innerHTML = "biaya parkir" + biaya;
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Hitung Biaya Parkir</h3>
+        Masuk parkir : <input type="number" value="" size="10" id="masuk"/>
+        <br/>
+        Keluar parkir : <input type="number" value="" size="10" id="keluar"/>
+        <br/>
+        <button onclick="hitungparkir()"> biaya parkir</button> : <span id="biaya"></span>
+    </body>
+</html>
