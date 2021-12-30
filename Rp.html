@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <title>kurs Rupiah</title>
+    <head>
+          <style>
+           .fld1{
+                float: left;
+                width: 40%;
+                padding: 15px;
+             }
+         </style>
+    </head>
+    <body>
+         <fieldset class="fld1" style="background-color: aquamarine;">
+             <legend>kurs Rupiah - Mata Uang Asing</legend>
+             <fieldset>
+            <tableborder="0" cellspacing="0">
+                <tr>
+                     <th><b>Masukan Nilai &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></th>
+                     <th><b>Valas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></th>
+                     <th><b>Nilai Rupiah &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                     <th></th>
+        </tr>
+        <tr>
+            <td><input type="text" value="0" size="15" id="uang" onchange="nilaiuang()"></td>
+            <td>
+            <select name="Valas"  id="mata"  onchange="nilaiuang()">
+                <option value="DU">Dollar us</option>
+                <option value="Ds">Dollar Singapore</option>
+                <option value="rm">Ringgit Malaysia</option>
+                <option value="yJ">Yen Jepang</option>
+                <option value="euro">Euro</option>
+                <option value="RAS">Riyal Arab Saudi</option>
+        </select>
+            </td>
+        <td><input type="text" value="0" size="15" id="rupiah" onchange="nilaiuang"></td>
+        </tr>
+    </table>
+    </fieldset>
+</fieldset>
+
+<script>
+    function nilaiuang(){
+        let duit = Number(document.getElementById("uang").value);
+        let money = document.getElementById("mata").value;
+
+        if (money=== "DU"){
+            document.getElementById("rupiah").value= duit * 9915;
+        }
+        else if (money=== "DS"){
+            document.getElementById("rupiah").value= duit * 13472;
+        }
+        else if (money=== "rm"){
+            document.getElementById("rupiah").value= duit * 874;
+        }
+        else if (money=== "yJ"){
+            document.getElementById("rupiah").value= duit * 120;
+        }
+        else if (money=== "euro"){
+            document.getElementById("rupiah").value= duit * 15888;
+        }
+        else if (money=== "RAS"){
+            document.getElementById("rupiah").value= duit * 3592;
+        }
+    }
+    </script>
+</body>
+</html>
